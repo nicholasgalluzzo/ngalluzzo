@@ -1,0 +1,24 @@
+module Ticketmodule
+
+def price(price)
+    @price = price
+  end
+
+  def location(location)
+    @location = location
+  end
+
+  def band(band)
+    @band = band
+  end
+
+  def date(date)
+    @date = date
+  end
+end
+
+module AuthenticatePurchase
+  def authenticate
+    puts "Congratulations, you have bought a ticket to see #{@band} on #{@date} at #{@location}. $#{@price} will be charged to your bank account within the next 24 hours."
+  end
+end
