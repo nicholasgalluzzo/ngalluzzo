@@ -1,0 +1,32 @@
+require_relative "ticketmodule"
+
+class Ticket
+  attr_accessor :price, :band, :location, :date
+  include AuthenticatePurchase
+end
+
+class Queen < Ticket
+  def ticket_details
+      @price = ("%.2f" %25.00)
+      @band = "Queen"
+      @location = "Orlando"
+      @date = "March 5th"
+      authenticate
+    end
+  end
+
+class Rhcp < Ticket
+  def ticket_details
+    @price = ("%.2f" %5.00)
+    @band = ("Red Hot Chili Peppers")
+    @location = ("Sichuan Gymnasium")
+    @date = ("October 11th")
+    authenticate
+  end
+end
+
+qticket = Queen.new
+qticket.ticket_details
+puts "-" * 30
+rticket = Rhcp.new
+rticket.ticket_details
